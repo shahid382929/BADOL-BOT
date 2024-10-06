@@ -3,7 +3,7 @@ module.exports.config = {
   eventType: ["log:subscribe"],
   version: "1.0.1",
   credits: "MOHAMMAD-BADOL",
-  description: "Notify bot or group member with random gif/photo/video",
+  description: "Notify bot or group member with random gif/photo",
   dependencies: {
     "fs-extra": "",
     "path": "",
@@ -24,13 +24,11 @@ module.exports.onLoad = function () {
     return;
 }
 
-
 module.exports.run = async function({ api, event }) {
   const { join } = global.nodemodule["path"];
   const { threadID } = event;
   if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     api.changeNickname(`${(!global.config.BOTNAME) ? "bot" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
-    const fs = require("fs");
     return api.sendMessage("চ্ঁলে্ঁ এ্ঁসে্ঁছি্ঁ ༺𝐎𝐌𝐎ཞ༻•__//𝟗𝟎", event.threadID, () => api.sendMessage({body:`╔════•| ✿ |•════╗\nআ্ঁস্ঁসা্ঁলা্ঁমু্ঁ💚আ্ঁলা্ঁই্ঁকু্ঁম্ঁ\n╚════•| ✿ |•════╝
 ________________________
 𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐬𝐨 𝐦𝐮𝐜𝐡 𝐟𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐢-𝐠𝐫𝐨𝐮𝐩-🖤🤗\n𝐈 𝐰𝐢𝐥𝐥 𝐚𝐥𝐰𝐚𝐲𝐬 𝐬𝐞𝐫𝐯𝐞 𝐲𝐨𝐮 𝐢𝐧𝐚𝐡𝐚𝐥𝐥𝐚𝐡 🌺❤️-!!
@@ -38,16 +36,15 @@ ________________________\n\n𝐓𝐨 𝐯𝐢𝐞𝐰 𝐚𝐧𝐲 𝐜𝐨𝐦�
 
 ${global.config.PREFIX}Help\n${global.config.PREFIX}Info\n${global.config.PREFIX}Admin
 ________________________\n★যে্ঁকো্ঁনো্ঁ অ্ঁভি্ঁযো্ঁগ্ঁ অ্ঁথ্ঁবা্ৃ হে্ঁল্প্ঁ এ্ঁর্ঁ জ্ঁন্য্ঁ এ্ঁড্ঁমি্ঁন্ঁ •༺𝐎𝐌𝐎ཞ⊹𝙰Ɩ𝚅𝙸༻• কে্ঁ ন্ঁক্ঁ ক্ঁর্ঁতে্ঁ পা্ঁরে্ঁন্ঁ★\n𝐌𝐞𝐬𝐬𝐞𝐠𝐞𝐫:  https://m.me/100085345533121\n 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: wa.me/+8801581033393
-⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment: fs.createReadStream(__dirname + "/•༺𝐎𝐌𝐎ཞ⊹𝙰Ɩ𝚅𝙸༻•/join.mp4")} ,threadID));
+⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`} ,threadID));
   }
   else {
     try {
-      const { createReadStream, existsSync, mkdirSync, readdirSync } = global.nodemodule["fs-extra"];
+      const { existsSync, mkdirSync, readdirSync } = global.nodemodule["fs-extra"];
       let { threadName, participantIDs } = await api.getThreadInfo(threadID);
 
       const threadData = global.data.threadData.get(parseInt(threadID)) || {};
       const path = join(__dirname, "•༺𝐎𝐌𝐎ཞ⊹𝙰Ɩ𝚅𝙸༻•", "font");
-      const pathGif = join(path, `${threadID}.video`);
 
       var mentions = [], nameArray = [], memLength = [], i = 0;
 
@@ -70,8 +67,7 @@ ________________________\n★যে্ঁকো্ঁনো্ঁ অ্ঁভ�
 
       const randomPath = readdirSync(join(__dirname, "BADOL", "font"));
 
-      if (existsSync(pathGif)) formPush = { body: msg, attachment: createReadStream(pathGif), mentions }
-      else if (randomPath.length != 0) {
+      if (randomPath.length != 0) {
         const pathRandom = join(__dirname, "BADOL", "font", `${randomPath[Math.floor(Math.random() * randomPath.length)]}`);
         formPush = { body: msg, attachment: createReadStream(pathRandom), mentions }
       }
@@ -80,4 +76,4 @@ ________________________\n★যে্ঁকো্ঁনো্ঁ অ্ঁভ�
       return api.sendMessage(formPush, threadID);
     } catch (e) { return console.log(e) };
   }
-        }
+}
