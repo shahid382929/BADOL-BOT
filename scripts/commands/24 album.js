@@ -40,7 +40,7 @@ module.exports.config = {
       responseType: "stream"
     })).data;
     return e.sendMessage({
-      body: "𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐘𝐎𝐔 𝐕𝐈𝐃𝐄𝐎 \n𝐅𝐑𝐎𝐌\n\n｢𝐁𝟒𝐃𝟗𝐋-𝐁𝟗𝐓___//𝟎𝟎𝟕｣",
+      body: "𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐘𝐎𝐔 𝐕𝐈𝐃𝐄𝐎 \n𝐅𝐑𝐎𝐌\n\n｢༺𝐎𝐌𝐎ཞ༻•__//𝟗𝟎｣",
       attachment: t
     }, a.threadID, a.messageID)
   }
