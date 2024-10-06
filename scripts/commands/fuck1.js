@@ -1,20 +1,19 @@
 module.exports.config = {
-    name: "fuck",
-    version: "7.3.1",
-    hasPermssion: 0,
-    credits: "BADOL-KHAN",
-    description: "Get fuck",
-    commandCategory: "Admin",
-    usages: "[@mention]",
-    cooldowns: 5,
-    dependencies: {
-        "axios": "",
-        "fs-extra": "",
-        "path": "",
-        "jimp": ""
-    }
+  name: "fuck",
+  version: "1.0.1", 
+  permssion: 2,
+  credits: "★𝐌𝟗𝐇𝟒𝐌𝐌𝟒𝐃-𝐁𝟒𝐃𝟗𝐋★",
+  prefix:true,
+  description: "Admin and Bot info.",
+  category: "...",
+  cooldowns: 1,
+  dependencies: 
+  {
+    "request":"",
+    "fs-extra":"",
+    "axios":""
+  }
 };
-
 module.exports.onLoad = async() => {
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
