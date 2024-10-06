@@ -1,14 +1,9 @@
 module.exports.config = {
   name: "joinnoti",
-  eventType: ["log:subscribe"],
-  version: "1.0.1",
-  credits: "MOHAMMAD-BADOL",
-  description: "Notify bot or group member with random gif/photo/video",
-  dependencies: {
-    "fs-extra": "",
-    "path": "",
-    "pidusage": ""
-  }
+  eventType: ['log:subscribe'],
+  version: "1.0.0",
+  credits: "Mirai-Team", // FIXED BY YAN Nayan
+  description: "GROUP UPDATE NOTIFICATION"
 };
 
 const fs = require('fs-extra');
@@ -189,4 +184,4 @@ https://www.facebook.com/www.xnxx.com169
       }
     } catch (e) { return console.log(e) };
   }
-                                                                         }
+}
