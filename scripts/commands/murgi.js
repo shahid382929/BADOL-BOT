@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "murgi",
+  name: "cuda",
   version: "7.0.0",
   permission: 2,
   credits: "ryuko",
@@ -10,7 +10,7 @@ module.exports.config = {
   cooldowns: 5,
   dependencies: {
     "process": ""
-	}
+  }
 module.exports.run = async function({ api, args, Users, event}) {
     var mention = Object.keys(event.mentions)[0];
     if(!mention) return api.sendMessage("বস যে মেয়েকে ক্সুদ্দে চাউ সে মেয়েকে @ম্যানশন দেউ", event.threadID);
