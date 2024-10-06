@@ -24,13 +24,13 @@ const time = process.uptime(),
     seconds = Math.floor(time % 60);
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【hh:mm:ss】");
-var link = ["https://i.imgur.com/Yi0QXnn.jpeg", 
+var link = ["https://i.imgur.com/srZRXmK.jpeg", 
 
-            "https://i.imgur.com/Yi0QXnn.jpeg", 
+            "https://i.imgur.com/srZRXmK.jpeg", 
 
-            "https://i.imgur.com/Yi0QXnn.jpeg",
+            "https://i.imgur.com/srZRXmK.jpeg",
 
-            "https://i.imgur.com/Yi0QXnn.jpeg"];
+            "https://i.imgur.com/srZRXmK.jpeg"];
 
 var callback = () => api.sendMessage({body:`•—»✨𝐀𝐝𝐦𝐢𝐧 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧✨🌺
  •┄┅════❁🌺❁════┅┄•
